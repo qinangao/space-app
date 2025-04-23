@@ -1,9 +1,11 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "../styles/NavBar.scss";
 function NavBar() {
   return (
     <nav className="navbar">
-      <img src="/assets/shared/logo.svg" alt="" />
+      <Link to="/">
+        <img src="/assets/shared/logo.svg" alt="logo" />
+      </Link>
       <ul>
         <li>
           <NavLink to="/">00 HOME</NavLink>
