@@ -3,9 +3,10 @@ import "../styles/NavBar.scss";
 function NavBar() {
   return (
     <nav className="navbar">
-      <Link to="/">
+      <Link className="logo" to="/">
         <img src="/assets/shared/logo.svg" alt="logo" />
       </Link>
+      <hr className="divider" />
       <ul>
         <li>
           <NavLink to="/">00 HOME</NavLink>
