@@ -9,18 +9,17 @@ function Destination({ destination }) {
     <div className="page destination-page">
       <NavBar />
       <div className="main">
-        <h1 className="title">
-          <span>01</span> Pick your destination
-        </h1>
-
-        <section className="destination-container">
-          <div className="left">
+        <section className="container">
+          <div className="imgbox">
+            <h1 className="title">
+              <span>01</span> Pick your destination
+            </h1>
             <img
               src={destination[activeIndex].images.webp}
               alt={destination[activeIndex].name}
             />
           </div>
-          <div className="right">
+          <div className="textbox">
             <nav>
               <ul className="destination-nav">
                 {destination.map((des, index) => (
@@ -35,7 +34,7 @@ function Destination({ destination }) {
               </ul>
             </nav>
             <div className="intro">
-              <h2 className="name">{destination[activeIndex].name}</h2>
+              <h2 className="name-large">{destination[activeIndex].name}</h2>
               <p className="content">{destination[activeIndex].description}</p>
             </div>
             <div className="data">

@@ -4,6 +4,7 @@ import Destination from "./pages/Destination";
 import Crew from "./pages/Crew";
 import Technology from "./pages/Technology";
 import data from "./data/data.json";
+import NavBar from "./components/NavBar";
 
 const destination = data.destinations;
 const crew = data.crew;

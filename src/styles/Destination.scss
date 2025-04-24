@@ -5,48 +5,24 @@
   min-height: 100vh;
   width: 100%;
   background-image: url("/assets/destination/background-destination-desktop.jpg");
-
-  .main {
-    padding: 100px 300px;
-
-    .destination-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-
-      .right {
-        width: 40%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 50px;
-        .destination-nav {
-          list-style-type: none;
-          display: flex;
-          gap: 40px;
-          padding-left: 0;
-          letter-spacing: 2px;
-          cursor: pointer;
-        }
-        .content {
-          line-height: 30px;
-          padding-top: 30px;
-          letter-spacing: 1px;
-        }
-        .data {
-          display: flex;
-          align-items: center;
-          gap: 100px;
-          .unit {
-            text-transform: uppercase;
-            font-family: "Bellefair", serif;
-            font-size: 2.3rem;
-            color: white;
-            margin-top: 20px;
-          }
-        }
-      }
-    }
+}
+.data {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  .unit {
+    text-transform: uppercase;
+    font-family: "Bellefair", serif;
+    font-size: 25px;
+    color: white;
+    margin-top: 20px;
   }
+}
+.name-large {
+  text-transform: uppercase;
+  font-family: "Bellefair", serif;
+  color: white;
+  font-size: 100px;
+  font-weight: 400;
+  letter-spacing: 5px;
 }
