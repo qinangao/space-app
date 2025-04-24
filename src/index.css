@@ -1,7 +1,25 @@
 * {
   margin: 0;
   box-sizing: border-box;
+  font-family: "Barlow Condensed", sans-serif;
 }
 .active {
   border-bottom: 3px solid white;
+}
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #d0d6eb;
+  letter-spacing: 3px;
+  font-size: 25px;
+}
+.title > span {
+  color: #535762;
+  font-weight: bold;
+  padding-right: 20px;
 }
