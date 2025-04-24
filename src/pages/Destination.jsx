@@ -1,25 +1,54 @@
+import React, { useState } from "react";
 import NavBar from "../components/NavBar";
 import "../styles/Destination.scss";
+
 function Destination({ destination }) {
-  console.log(destination);
+  const [activeIndex, setActiveIndex] = useState(0); // Start with the first destination (Moon)
+
   return (
-    <div className="destination-page">
+    <div className="page destination-page">
       <NavBar />
-      <h1>Pick your destination</h1> <h2>Moon Mars Europa Titan Europa</h2>
-      {destination.map((des, index) => (
-        <section key={index} className="destination-container">
-          <h1>{des.name}</h1>
-          <p>{des.description}</p>
-          <div className="distance">
-            <p>AVG. DISTANCE</p>
-            <p>{des.distance}</p>
+      <div className="main">
+        <h1 className="title">
+          <span>01</span> Pick your destination
+        </h1>
+
+        <nav>
+          <ul>
+            {destination.map((des, index) => (
+              <li
+                key={index}
+                className={index === activeIndex ? "active" : ""}
+                onClick={() => setActiveIndex(index)}
+              >
+                {des.name.toUpperCase()}
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        {/* Show only the selected destination */}
+        <section className="destination-container">
+          <div className="left">
+            <img
+              src={destination[activeIndex].images.webp}
+              alt={destination[activeIndex].name}
+            />
           </div>
-          <div className="distance">
-            <p>EST. TRAVEL TIME</p>
-            <p>{des.travel}</p>
+          <div className="right">
+            <h1>{destination[activeIndex].name}</h1>
+            <p>{destination[activeIndex].description}</p>
+            <div className="distance">
+              <p>AVG. DISTANCE</p>
+              <p>{destination[activeIndex].distance}</p>
+            </div>
+            <div className="distance">
+              <p>EST. TRAVEL TIME</p>
+              <p>{destination[activeIndex].travel}</p>
+            </div>
           </div>
         </section>
-      ))}
+      </div>
     </div>
   );
 }
