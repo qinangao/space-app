@@ -2,6 +2,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Barlow Condensed", sans-serif;
+  color: #d0d6eb;
 }
 .active {
   border-bottom: 3px solid white;
@@ -17,9 +18,18 @@
   color: #d0d6eb;
   letter-spacing: 3px;
   font-size: 25px;
+  padding-bottom: 80px;
 }
 .title > span {
   color: #535762;
   font-weight: bold;
   padding-right: 20px;
+}
+.name {
+  text-transform: uppercase;
+  font-family: "Bellefair", serif;
+  color: white;
+  font-size: 100px;
+  font-weight: 400;
+  letter-spacing: 5px;
 }

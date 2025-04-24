@@ -13,21 +13,6 @@ function Destination({ destination }) {
           <span>01</span> Pick your destination
         </h1>
 
-        <nav>
-          <ul>
-            {destination.map((des, index) => (
-              <li
-                key={index}
-                className={index === activeIndex ? "active" : ""}
-                onClick={() => setActiveIndex(index)}
-              >
-                {des.name.toUpperCase()}
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        {/* Show only the selected destination */}
         <section className="destination-container">
           <div className="left">
             <img
@@ -36,15 +21,32 @@ function Destination({ destination }) {
             />
           </div>
           <div className="right">
-            <h1>{destination[activeIndex].name}</h1>
-            <p>{destination[activeIndex].description}</p>
-            <div className="distance">
-              <p>AVG. DISTANCE</p>
-              <p>{destination[activeIndex].distance}</p>
+            <nav>
+              <ul className="destination-nav">
+                {destination.map((des, index) => (
+                  <li
+                    key={index}
+                    className={index === activeIndex ? "active" : ""}
+                    onClick={() => setActiveIndex(index)}
+                  >
+                    {des.name.toUpperCase()}
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <div className="intro">
+              <h2 className="name">{destination[activeIndex].name}</h2>
+              <p className="content">{destination[activeIndex].description}</p>
             </div>
-            <div className="distance">
-              <p>EST. TRAVEL TIME</p>
-              <p>{destination[activeIndex].travel}</p>
+            <div className="data">
+              <div className="distance">
+                <p>AVG. DISTANCE</p>
+                <p className="unit">{destination[activeIndex].distance}</p>
+              </div>
+              <div className="travel">
+                <p>EST. TRAVEL TIME</p>
+                <p className="unit">{destination[activeIndex].travel}</p>
+              </div>
             </div>
           </div>
         </section>
