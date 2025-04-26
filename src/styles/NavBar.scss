@@ -4,15 +4,16 @@ $highlight-color: white;
 
 .navbar {
   position: absolute;
-  top: 10px;
+  top: 20px;
   left: 0;
   right: 0;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 50px;
-  height: 100px;
+  padding: 0 80px;
+
+  background: transparent;
 
   .logo {
     flex-shrink: 0;
@@ -20,52 +21,138 @@ $highlight-color: white;
 
   .divider {
     flex-grow: 1;
-    height: 1px;
+    height: 2px;
     background-color: $primary-text-color;
-    margin: 0 30px;
+    margin: 0 40px;
     position: relative;
     z-index: 10;
   }
 
-  ul {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    list-style: none;
-    margin: 0;
-    padding: 0px 60px;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-
-    li {
+  .desknav {
+    height: 100px;
+    ul {
       height: 100%;
       display: flex;
       align-items: center;
+      gap: 60px;
+      list-style: none;
+      margin: 0;
+      padding: 10px 70px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border-radius: 12px;
 
-      a {
+      li {
         display: flex;
         align-items: center;
-        height: 100%;
-        padding: 0 10px;
-        color: $highlight-color;
-        text-decoration: none;
-        font-family: "Barlow Condensed", sans-serif;
-        font-size: 14px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        transition: border-bottom 0.3s ease, color 0.3s ease;
-        position: relative;
 
-        &.active {
-          border-bottom: 3px solid $highlight-color; // active underline at bottom edge
+        span {
+          color: $primary-text-color;
+          padding-right: 12px;
+          font-size: 16px;
         }
 
-        &:hover {
-          color: $primary-text-color;
+        a {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          padding: 8px 14px;
+          color: $highlight-color;
+          text-decoration: none;
+          font-family: "Barlow Condensed", sans-serif;
+          font-size: 16px;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          transition: color 0.3s ease;
+          position: relative;
+
+          &.active {
+            &::after {
+              content: "";
+              position: absolute;
+              left: 0;
+              right: 0;
+              bottom: -35px; // adjust based on your navbar size
+              height: 3px;
+              background-color: $highlight-color;
+            }
+          }
+
+          &:hover {
+            color: $primary-text-color;
+          }
         }
       }
+    }
+  }
+  .mobilenav {
+    display: none;
+  }
+  .hamburger-btn {
+    display: none;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar {
+    top: 0;
+    padding: 0;
+
+    .logo {
+      padding-left: 20px;
+    }
+    .divider {
+      display: none;
+    }
+
+    ul {
+      gap: 30px;
+      padding: 0;
+
+      span {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    .desknav {
+      display: none;
+    }
+    .mobilenav {
+      display: block;
+    }
+    .mobilenav ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      height: 250px;
+      position: absolute;
+      background-color: white;
+      top: 50%;
+      left: 27%;
+      padding: 20px;
+
+      list-style: none;
+      border-radius: 20px;
+
+      li {
+        a {
+          position: static;
+          color: black;
+          text-decoration: none;
+          font-family: "Barlow Condensed", sans-serif;
+        }
+      }
+    }
+    .hamburger-btn {
+      display: block;
+      padding-right: 20px;
     }
   }
 }
