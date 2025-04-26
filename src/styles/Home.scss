@@ -1,62 +1,71 @@
+$primary-text-color: #d0d6eb;
+$secondary-text-color: #535762;
+$highlight-color: white;
+
 .homepage {
-  background-image: url("/assets/home/background-home-desktop.jpg");
-  background-size: cover;
-  background-position: center;
+  background: url("/assets/home/background-home-desktop.jpg") center/cover
+    no-repeat;
   min-height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
-.home-container {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  max-width: 1400px;
-
-  .home-left {
-    width: 30%;
+  .home-container {
+    width: 100%;
+    max-width: 1400px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
 
-    gap: 25px;
-    h4 {
-      font-family: "Barlow Condensed", sans-serif;
-      color: #d0d6eb;
-      text-transform: uppercase;
-      font-weight: 400;
-      font-size: 14px;
-      letter-spacing: 5px;
+    .home-left {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+
+      h4 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        color: $primary-text-color;
+      }
+
+      span {
+        font-family: "Bellefair", serif;
+        font-size: 120px;
+        text-transform: uppercase;
+        color: $highlight-color;
+      }
+
+      p {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 16px;
+        letter-spacing: 1.5px;
+        line-height: 28px;
+        text-align: justify;
+        color: $primary-text-color;
+      }
     }
-    span {
-      font-size: 120px;
-      color: white;
-      font-family: "Bellefair", serif;
-      text-transform: uppercase;
-    }
-    p {
-      font-family: "Barlow Condensed", sans-serif;
-      color: #d0d6eb;
-      letter-spacing: 2px;
-      line-height: 25px;
-      text-align: justify;
-    }
-  }
-  .home-right {
-    button {
-      border: none;
-      border-radius: 50%;
-      font-size: 40px;
-      background-color: white;
-      width: 250px;
-      height: 250px;
-      text-transform: uppercase;
-      text-align: center;
-      font-family: "Bellefair", serif;
-      cursor: pointer;
-      color: black;
+
+    .home-right {
+      button {
+        width: 250px;
+        height: 250px;
+        border: none;
+        border-radius: 50%;
+        background-color: $highlight-color;
+        color: black;
+        font-family: "Bellefair", serif;
+        font-size: 40px;
+        text-transform: uppercase;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
     }
   }
 }

@@ -1,28 +1,56 @@
+$primary-text-color: #d0d6eb;
+$secondary-text-color: #535762;
+$highlight-color: white;
+
 .destination-page {
-  color: white;
+  color: $highlight-color;
   background-size: cover;
   background-position: center;
   min-height: 100vh;
   width: 100%;
   background-image: url("/assets/destination/background-destination-desktop.jpg");
-}
-.data {
-  display: flex;
-  align-items: center;
-  gap: 100px;
-  .unit {
+
+  .name-large {
     text-transform: uppercase;
     font-family: "Bellefair", serif;
-    font-size: 25px;
-    color: white;
-    margin-top: 20px;
+    color: $highlight-color;
+    font-size: 100px;
+    font-weight: 400;
+    letter-spacing: 5px;
   }
-}
-.name-large {
-  text-transform: uppercase;
-  font-family: "Bellefair", serif;
-  color: white;
-  font-size: 100px;
-  font-weight: 400;
-  letter-spacing: 5px;
+
+  .data {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    .unit {
+      text-transform: uppercase;
+      font-family: "Bellefair", serif;
+      font-size: 25px;
+      color: $highlight-color;
+      margin-top: 20px;
+    }
+  }
+
+  .planets {
+    -webkit-animation: spin 20s linear infinite;
+    -moz-animation: spin 20s linear infinite;
+    animation: spin 20s linear infinite;
+  }
+  @-moz-keyframes spin {
+    100% {
+      -moz-transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes spin {
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  @keyframes spin {
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
 }

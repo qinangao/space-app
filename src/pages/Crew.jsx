@@ -1,10 +1,7 @@
 import NavBar from "../components/NavBar";
 import "../styles/Crew.scss";
-import { useState } from "react";
 
-function Crew({ crew }) {
-  console.log(crew);
-  const [activeIndex, setActiveIndex] = useState(0);
+function Crew({ crew, activeIndex, setActiveIndex }) {
   return (
     <div className="page crewpage">
       <NavBar />
@@ -32,7 +29,10 @@ function Crew({ crew }) {
             </ul>
           </div>
           <div className="imgbox">
-            <img src={crew[activeIndex].images.webp} alt="" />
+            <img
+              src={crew[activeIndex].images.webp}
+              alt={crew[activeIndex].name}
+            />
           </div>
         </section>
       </div>

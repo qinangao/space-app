@@ -1,39 +1,71 @@
+$primary-text-color: #d0d6eb;
+$secondary-text-color: #535762;
+$highlight-color: white;
+
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   position: absolute;
+  top: 10px;
   left: 0;
   right: 0;
-  top: 10px;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  height: 100px;
+
   .logo {
-    padding: 0 50px;
-  }
-
-  ul {
-    display: inline-flex;
-    gap: 50px;
-    list-style-type: none;
-    background-color: transparent;
-    backdrop-filter: blur(10px);
-    padding: 40px 100px;
-
-    li a {
-      color: white;
-      text-decoration: none;
-      font-family: "Barlow Condensed", sans-serif;
-      font-size: 13px;
-      letter-spacing: 2px;
-      padding: 0 10px 38px 10px;
-    }
+    flex-shrink: 0;
   }
 
   .divider {
-    border-top: 1px solid #d0d6eb;
-    width: 30%;
-    margin-right: 50px;
-    left: 8%;
+    flex-grow: 1;
+    height: 1px;
+    background-color: $primary-text-color;
+    margin: 0 30px;
+    position: relative;
     z-index: 10;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    list-style: none;
+    margin: 0;
+    padding: 0px 60px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+
+    li {
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      a {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding: 0 10px;
+        color: $highlight-color;
+        text-decoration: none;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 14px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        transition: border-bottom 0.3s ease, color 0.3s ease;
+        position: relative;
+
+        &.active {
+          border-bottom: 3px solid $highlight-color; // active underline at bottom edge
+        }
+
+        &:hover {
+          color: $primary-text-color;
+        }
+      }
+    }
   }
 }

@@ -1,10 +1,7 @@
-import React, { useState } from "react";
 import NavBar from "../components/NavBar";
 import "../styles/Destination.scss";
 
-function Destination({ destination }) {
-  const [activeIndex, setActiveIndex] = useState(0); // Start with the first destination (Moon)
-
+function Destination({ destination, activeIndex, setActiveIndex }) {
   return (
     <div className="page destination-page">
       <NavBar />
@@ -15,6 +12,7 @@ function Destination({ destination }) {
               <span>01</span> Pick your destination
             </h1>
             <img
+              className="planets"
               src={destination[activeIndex].images.webp}
               alt={destination[activeIndex].name}
             />
