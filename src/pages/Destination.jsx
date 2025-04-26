@@ -1,7 +1,19 @@
 import NavBar from "../components/NavBar";
 import "../styles/Destination.scss";
+import { useEffect, useState } from "react";
 
 function Destination({ destination, activeIndex, setActiveIndex }) {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 576);
+
+  useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth < 576);
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="page destination-page">
       <NavBar />
@@ -13,7 +25,11 @@ function Destination({ destination, activeIndex, setActiveIndex }) {
             </h1>
             <img
               className="planets"
-              src={destination[activeIndex].images.webp}
+              src={
+                isMobile
+                  ? destination[activeIndex].images.png
+                  : destination[activeIndex].images.webp
+              }
               alt={destination[activeIndex].name}
             />
           </div>
