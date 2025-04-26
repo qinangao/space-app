@@ -1,7 +1,7 @@
 $primary-text-color: #d0d6eb;
 $secondary-text-color: #535762;
 $highlight-color: white;
-
+//Desktop:
 * {
   margin: 0;
   padding: 0;
@@ -10,77 +10,77 @@ $highlight-color: white;
   color: $primary-text-color;
 }
 
-.active {
-  border-bottom: 3px solid $highlight-color;
-}
-
 .page {
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-.title {
-  font-weight: 400;
-  font-size: 20px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: $primary-text-color;
-  padding-bottom: 60px;
+  .main {
+    padding: 100px 100px 0;
+    max-width: 1400px;
 
-  > span {
-    color: $secondary-text-color;
-    font-weight: bold;
-    padding-right: 20px;
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 150px;
+      width: 100%;
+
+      .title {
+        font-weight: 400;
+        font-size: 20px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: $primary-text-color;
+        padding-bottom: 60px;
+
+        > span {
+          color: $secondary-text-color;
+          font-weight: bold;
+          padding-right: 20px;
+        }
+      }
+
+      img {
+        flex: 1 1 0; // let the image grow
+        max-width: 100%;
+        height: auto;
+      }
+
+      .textbox {
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+
+        .destination-nav {
+          list-style: none;
+          display: flex;
+          gap: 40px;
+          padding-left: 0;
+          letter-spacing: 2px;
+          cursor: pointer;
+        }
+        .name {
+          font-family: "Bellefair", serif;
+          font-weight: 400;
+          font-size: 40px;
+          letter-spacing: 5px;
+          text-transform: uppercase;
+          color: $highlight-color;
+        }
+        .content {
+          line-height: 30px;
+          letter-spacing: 1px;
+        }
+      }
+    }
   }
 }
 
-.name {
-  font-family: "Bellefair", serif;
-  font-weight: 400;
-  font-size: 40px;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  color: $highlight-color;
-}
-
-.main {
-  padding: 100px 100px 0;
-  max-width: 1400px;
-
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 150px;
-    width: 100%;
-
-    img {
-      flex: 1 1 0; // let the image grow
-      max-width: 100%;
-      height: auto;
-    }
-
-    .textbox {
-      width: 45%;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 30px;
-
-      .destination-nav {
-        list-style: none;
-        display: flex;
-        gap: 40px;
-        padding-left: 0;
-        letter-spacing: 2px;
-        cursor: pointer;
-      }
-
-      .content {
-        line-height: 30px;
-        letter-spacing: 1px;
-      }
-    }
+@media (max-width: 768px) {
+  p {
+    color: red;
   }
 }
