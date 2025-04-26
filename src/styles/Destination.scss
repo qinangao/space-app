@@ -31,7 +31,7 @@ $highlight-color: white;
   .data {
     display: flex;
     align-items: center;
-    gap: 100px;
+    gap: 20px;
     .unit {
       text-transform: uppercase;
       font-family: "Bellefair", serif;
@@ -42,6 +42,7 @@ $highlight-color: white;
   }
 
   .planets {
+    padding-top: 20px;
     -webkit-animation: spin 20s linear infinite;
     -moz-animation: spin 20s linear infinite;
     animation: spin 20s linear infinite;
@@ -67,17 +68,30 @@ $highlight-color: white;
 @media (max-width: 992px) {
   .destination-page {
     background-image: url("/assets/destination/background-destination-tablet.jpg");
-  }
-  .intro {
-    text-align: center;
+    overflow-x: hidden;
+    .name-large {
+      font-size: 80px;
+    }
+    .intro {
+      text-align: center;
+    }
+
+    .destination-nav {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
   }
 }
 
 @media (max-width: 576px) {
   .destination-page {
     background-image: url("/assets/destination/background-destination-mobile.jpg");
-  }
-  .intro {
-    text-align: center;
+    overflow-x: hidden;
+
+    .data {
+      flex-direction: column;
+      gap: 20px;
+    }
   }
 }
