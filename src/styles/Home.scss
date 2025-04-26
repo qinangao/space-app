@@ -69,3 +69,61 @@ $highlight-color: white;
     }
   }
 }
+
+@media (max-width: 768px) {
+  .homepage {
+    background: url("/assets/home/background-home-tablet.jpg") center/cover
+      no-repeat;
+    .home-container {
+      flex-direction: column;
+      padding: 200px 80px;
+
+      .home-left {
+        width: 80%;
+        text-align: center;
+        h4 {
+          font-size: 13px;
+          font-weight: 400;
+
+          letter-spacing: 4px;
+        }
+        p {
+          text-align: center;
+          font-size: 13px;
+        }
+        span {
+          font-size: 80px;
+        }
+      }
+    }
+
+    .home-right {
+      padding-top: 80px;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .homepage {
+    background: url("/assets/home/background-home-mobile.jpg") center/cover
+      no-repeat;
+    .home-container {
+      padding: 100px 25px;
+
+      .home-left {
+        width: 100%;
+        h4 {
+          letter-spacing: 2px;
+        }
+
+        span {
+          font-size: 80px;
+        }
+      }
+    }
+
+    // .home-right {
+    //   padding-top: 80px;
+    // }
+  }
+}
