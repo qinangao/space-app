@@ -1,8 +1,60 @@
+$primary-text-color: #d0d6eb;
+$secondary-text-color: #535762;
+$highlight-color: white;
 .techpage {
   background-image: url("/assets/technology/background-technology-desktop.jpg");
-  font-family: "Barlow Condensed", sans-serif;
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
   width: 100%;
+  min-height: 100vh;
+  font-family: "Barlow Condensed", sans-serif;
+
+  .tech-left {
+    display: flex;
+    gap: 60px;
+    justify-content: flex-start; // align items from the left
+    align-items: flex-start;
+    .tect-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      cursor: pointer;
+      flex: 0 0 auto;
+    }
+
+    .button {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 1px solid $primary-text-color; // use your variable here
+      text-align: center;
+      font-family: "Bellefair", serif;
+      font-size: 30px;
+      padding-top: 16px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .active-button {
+      background-color: $highlight-color;
+      color: black;
+    }
+  }
+
+  .tech-textbox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 500px;
+
+    .intro {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .content {
+      line-height: 30px;
+      letter-spacing: 1px;
+    }
+  }
 }
