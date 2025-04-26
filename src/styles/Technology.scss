@@ -14,6 +14,7 @@ $highlight-color: white;
     gap: 60px;
     justify-content: flex-start; // align items from the left
     align-items: flex-start;
+    padding-bottom: 50px;
     .tect-nav {
       display: flex;
       flex-direction: column;
@@ -55,6 +56,50 @@ $highlight-color: white;
     .content {
       line-height: 30px;
       letter-spacing: 1px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .techpage {
+    background-image: url("/assets/technology/background-technology-tablet.jpg");
+
+    .tech-left {
+      flex-direction: column-reverse;
+      gap: 60px;
+      align-items: center;
+      padding-bottom: 50px;
+      .tect-nav {
+        flex-direction: row;
+        gap: 20px;
+        cursor: pointer;
+        flex: 2;
+      }
+
+      .active-button {
+        background-color: $highlight-color;
+        color: black;
+      }
+    }
+
+    .tech-textbox {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 30px;
+      max-width: 500px;
+      flex: 1;
+
+      .intro {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      .content {
+        line-height: 30px;
+        letter-spacing: 1px;
+      }
     }
   }
 }

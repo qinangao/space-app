@@ -16,17 +16,17 @@ function Crew({ crew, activeIndex, setActiveIndex }) {
             <h2 className="name">{crew[activeIndex].name}</h2>
             <p className="content">{crew[activeIndex].bio}</p>
 
-            <ul className="crew-nav">
+            <nav className="crew-nav">
               {crew.map((crew, index) => (
-                <li
+                <div
                   key={index}
                   className={`dots ${
                     index === activeIndex ? "active-dot" : ""
                   }`}
                   onClick={() => setActiveIndex(index)}
-                ></li>
+                ></div>
               ))}
-            </ul>
+            </nav>
           </div>
           <div className="imgbox">
             <img

@@ -70,13 +70,14 @@ $highlight-color: white;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .homepage {
     background: url("/assets/home/background-home-tablet.jpg") center/cover
       no-repeat;
+    flex-direction: column;
     .home-container {
       flex-direction: column;
-      padding: 200px 80px;
+      padding: 150px 80px;
 
       .home-left {
         width: 80%;
@@ -107,8 +108,9 @@ $highlight-color: white;
   .homepage {
     background: url("/assets/home/background-home-mobile.jpg") center/cover
       no-repeat;
+
     .home-container {
-      padding: 100px 25px;
+      padding: 150px 25px;
 
       .home-left {
         width: 100%;
@@ -121,9 +123,5 @@ $highlight-color: white;
         }
       }
     }
-
-    // .home-right {
-    //   padding-top: 80px;
-    // }
   }
 }
