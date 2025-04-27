@@ -3,6 +3,7 @@ function MapItems({
   activeIndex,
   setActiveIndex,
   renderContent,
+  baseClass = "",
   activeClass = "active",
   Element = "div",
 }) {
@@ -10,10 +11,12 @@ function MapItems({
     <>
       {data.map((item, index) => {
         const Tag = Element;
+        const isActive = index === activeIndex;
+        const className = `${baseClass} ${isActive ? activeClass : ""}`.trim();
         return (
           <Tag
             key={index}
-            className={index === activeIndex ? activeClass : ""}
+            className={className}
             onClick={() => setActiveIndex(index)}
           >
             {renderContent(item, index)}

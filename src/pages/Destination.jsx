@@ -1,9 +1,10 @@
 import NavBar from "../components/NavBar";
 import "../styles/Destination.scss";
 import { useNewState } from "../contexts/StateContext";
+import MapItems from "../components/MapItems";
 
-function Destination({ destination }) {
-  const { isMobile, activeIndex, setActiveIndex } = useNewState();
+function Destination() {
+  const { isMobile, activeIndex, setActiveIndex, destination } = useNewState();
 
   return (
     <div className="page destination-page">
@@ -27,15 +28,14 @@ function Destination({ destination }) {
           <div className="textbox">
             <nav>
               <ul className="destination-nav">
-                {destination.map((des, index) => (
-                  <li
-                    key={index}
-                    className={index === activeIndex ? "active" : ""}
-                    onClick={() => setActiveIndex(index)}
-                  >
-                    {des.name.toUpperCase()}
-                  </li>
-                ))}
+                <MapItems
+                  data={destination}
+                  activeIndex={activeIndex}
+                  setActiveIndex={setActiveIndex}
+                  activeClass="active"
+                  renderContent={(des) => des.name.toUpperCase()}
+                  Element="li"
+                />
               </ul>
             </nav>
             <div className="intro">

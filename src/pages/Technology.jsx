@@ -1,9 +1,10 @@
 import NavBar from "../components/NavBar";
 import "../styles/Technology.scss";
 import { useNewState } from "../contexts/StateContext";
+import MapItems from "../components/MapItems";
 
-function Technology({ technology }) {
-  const { activeIndex, setActiveIndex, isMobile } = useNewState();
+function Technology() {
+  const { activeIndex, setActiveIndex, isMobile, technology } = useNewState();
 
   return (
     <div className="page techpage">
@@ -16,17 +17,15 @@ function Technology({ technology }) {
             </h1>
             <div className="tech-left">
               <div className="tect-nav">
-                {technology.map((tech, index) => (
-                  <div
-                    key={index}
-                    className={`button ${
-                      index === activeIndex ? "active-button" : ""
-                    }`}
-                    onClick={() => setActiveIndex(index)}
-                  >
-                    {index + 1}
-                  </div>
-                ))}
+                <MapItems
+                  data={technology}
+                  activeIndex={activeIndex}
+                  setActiveIndex={setActiveIndex}
+                  renderContent={(tech, index) => index + 1}
+                  baseClass="button"
+                  activeClass="active-button"
+                  Element="div"
+                />
               </div>
               <div className="tech-textbox">
                 <p className="intro">The terminology... </p>

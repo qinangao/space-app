@@ -1,9 +1,10 @@
 import NavBar from "../components/NavBar";
 import "../styles/Crew.scss";
 import { useNewState } from "../contexts/StateContext";
+import MapItems from "../components/MapItems";
 
-function Crew({ crew }) {
-  const { activeIndex, setActiveIndex, isMobile } = useNewState();
+function Crew() {
+  const { activeIndex, setActiveIndex, isMobile, crew } = useNewState();
   return (
     <div className="page crewpage">
       <NavBar />
@@ -19,15 +20,15 @@ function Crew({ crew }) {
             <p className="content">{crew[activeIndex].bio}</p>
 
             <nav className="crew-nav">
-              {crew.map((crew, index) => (
-                <div
-                  key={index}
-                  className={`dots ${
-                    index === activeIndex ? "active-dot" : ""
-                  }`}
-                  onClick={() => setActiveIndex(index)}
-                ></div>
-              ))}
+              <MapItems
+                data={crew}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+                renderContent={() => null}
+                baseClass="dots"
+                activeClass="active-dot"
+                Element="div"
+              />
             </nav>
           </div>
           <div className="imgbox">
