@@ -1,7 +1,10 @@
 import NavBar from "../components/NavBar";
 import "../styles/Technology.scss";
+import { useNewState } from "../contexts/StateContext";
 
-function Technology({ technology, activeIndex, setActiveIndex }) {
+function Technology({ technology }) {
+  const { activeIndex, setActiveIndex, isMobile } = useNewState();
+
   return (
     <div className="page techpage">
       <NavBar />
@@ -34,7 +37,14 @@ function Technology({ technology, activeIndex, setActiveIndex }) {
           </div>
 
           <div className="imgbox">
-            <img src={technology[activeIndex].images.portrait} alt="" />
+            <img
+              src={
+                isMobile
+                  ? technology[activeIndex].images.landscape
+                  : technology[activeIndex].images.portrait
+              }
+              alt={technology[activeIndex].name}
+            />
           </div>
         </section>
       </div>

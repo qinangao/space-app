@@ -1,18 +1,9 @@
 import NavBar from "../components/NavBar";
 import "../styles/Destination.scss";
-import { useEffect, useState } from "react";
+import { useNewState } from "../contexts/StateContext";
 
-function Destination({ destination, activeIndex, setActiveIndex }) {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 576);
-
-  useEffect(() => {
-    function handleResize() {
-      setIsMobile(window.innerWidth < 576);
-    }
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+function Destination({ destination }) {
+  const { isMobile, activeIndex, setActiveIndex } = useNewState();
 
   return (
     <div className="page destination-page">

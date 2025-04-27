@@ -1,7 +1,9 @@
 import NavBar from "../components/NavBar";
 import "../styles/Crew.scss";
+import { useNewState } from "../contexts/StateContext";
 
-function Crew({ crew, activeIndex, setActiveIndex }) {
+function Crew({ crew }) {
+  const { activeIndex, setActiveIndex, isMobile } = useNewState();
   return (
     <div className="page crewpage">
       <NavBar />
@@ -30,7 +32,11 @@ function Crew({ crew, activeIndex, setActiveIndex }) {
           </div>
           <div className="imgbox">
             <img
-              src={crew[activeIndex].images.webp}
+              src={
+                isMobile
+                  ? crew[activeIndex].images.png
+                  : crew[activeIndex].images.webp
+              }
               alt={crew[activeIndex].name}
             />
           </div>
